@@ -1,0 +1,92 @@
+main#home{
+    background-color: #1c1c1c;
+
+    .container-main{
+        @include px($pxContentPage);
+        padding-bottom: 25px;
+
+        section#cardSection{
+
+            .currSeries{
+                position: relative;
+                top:-20px;
+                left: 0;
+                width: max-content;
+                @include py(5px);
+                @include px(10px);
+                font-size: 1.8em;
+                font-weight: bold;
+                color: $white;
+                background-color: $blueComics;
+            }
+
+            #consoleCard{
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 10px;
+                li.card{
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                    margin-left: 25px;
+                    background-color: inherit;
+                    border: none;
+
+                    img.card-img{
+                        width: 180px;
+                        height: 180px;
+                        object-fit: cover;
+                        object-position: top;
+                    }
+
+                    .card-body{
+                        width: 180px;
+                        padding-left: 0;
+                        color: $white;
+                        p{
+                            margin: 0;
+                            word-wrap: break-word;
+                        }
+
+                    }
+                }
+
+            }
+
+            a.load-more{
+                width: 180px;
+                display: block;
+                @include py(8px);
+                @include mx(auto);
+
+                background-color:  $blueComics;
+                border-radius: 0;
+                color: $white;
+                font-size: 0.8em;
+                font-weight: bold;
+            }
+        }
+    }
+
+    section#infoDC{
+        height: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        @include px($pxContentPage);
+        background-color: $blueComics;
+
+        div{
+            img{
+                height: 50px;
+                width: 50px;
+                object-fit: contain;
+            }
+            span{
+                padding-left: 20px;
+                color: $white;
+            }
+        }
+    }
+}

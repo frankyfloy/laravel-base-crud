@@ -1,0 +1,170 @@
+main#details{
+    position: relative;
+    background-color: #f6f6f6;
+
+    .divider{
+        height: 70px;
+        background-color:  $blueComics;
+    }
+
+    .thumbArticle{
+        position: absolute;
+        top:-240px;
+        left: 20%;
+        width: max-content;
+        border: 1px solid $white;
+    }
+
+    section#consoleDetails{
+        position: relative;
+        @include px(20%);
+        background-color: #f6f6f6;
+        width: 80%;
+        @include my(70px);
+
+        .cont-price{
+            width: 100%;
+            display: flex;
+            height: 50px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: $white;
+            font-weight: bold;
+            background-color: #55ba59;
+
+
+            .info-price{
+                width: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include px(2%);
+            }
+
+
+            .check-Availability{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-left: 1px solid black;
+                @include px(2%);
+
+                a.dropdown-toggle{
+                    text-decoration: none;
+                    color: $white;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
+
+        p.description{
+            font-size: 16px;
+        }
+
+        div.cont-pubblicità{
+            position: absolute;
+            top: 20px;
+            right: 0;
+            text-align: right;
+
+            p{
+                margin: 0;
+                font-weight: bold;
+            }
+        }
+    }
+
+
+    section#infoDetails{
+        @include px(20%);
+        padding-top: 30px;
+        padding-bottom: 100px;
+        background-color: $lightGreyFoot;
+        width: 100%;
+        display: flex;
+
+
+        h4{
+            margin: 0;
+            padding-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 1px solid $greyFooter;
+        }
+
+        span.headCell{
+            width: 20%;
+            font-size: 12px;
+            font-weight: bold;
+            @include py(8px);
+        }
+
+        span.contentCell{
+            padding-right: 100%;
+            @include py(8px);
+            width: 80%;
+            padding-right: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .br-bottom{
+            display: flex;
+            @include py(5px);
+            border-bottom: 1px solid $greyFooter;
+        }
+
+    }
+
+    section#infoDC{
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include px(20%);
+        border-top: 1px solid  $greyFooter;
+        background-color: $lightGreyFoot;
+
+
+        div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            @include px(10px);
+            border-left: 1px solid  $greyFooter;
+
+            img{
+                order: 1;
+                height: 40px;
+                width: 40px;
+                object-fit: contain;
+                align-self: center;
+                filter: brightness(0.5);
+
+                &:hover{
+                    filter: invert(1);
+                }
+            }
+            span{
+                padding-top: 10px;
+                padding-left: 10px;
+                color:  $greyFooter;
+                font-weight: bold;
+                font-size: 12px;
+
+                a{
+                    color: inherit;
+
+                    &:hover{
+                        color: $blueComics;
+                    }
+                }
+            }
+
+            &:last-child{
+                border-right: 1px solid  $greyFooter;
+            }
+        }
+    }
+}

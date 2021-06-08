@@ -1,0 +1,114 @@
+.cont-nav{
+    .navTop,nav{
+        @include px($pxContentPage);
+    }
+
+    .navTop{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 25px;
+        background-color: $blueComics;
+
+        div:first-child, .navTop-link{
+            display: flex;
+            font-weight: bold;
+            color: $white;
+            font-size: 12px;
+            span{
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+
+        div.navTop-item{
+            padding-left: 70px;
+            .navTop-link{
+                align-items: center;
+            }
+        }
+    }
+
+    nav{
+        min-height: 100PX;
+        background-color: #ffffff;
+        padding-bottom: 5px;
+        .navbar-brand{
+            height: 70px;
+            width: 70px;
+
+            img.logoNav{
+                width: 100%;
+            }
+        }
+
+        div.navbar-collapse{
+            justify-content: space-between;
+            padding-left: 50px;
+
+            .navbar-nav{
+                display: contents;
+                padding-left: 50px;
+                li.nav-item{
+
+                    .nav-link{
+                        @include py(50px);
+                        font-weight: bold;
+                        font-size: 0.9em;
+                        color: $tuna;
+
+                        &:hover{
+                            color: $blueComics;
+                            box-shadow: 0px 8px 0px -2px #0282f9;
+                        }
+                    }
+
+                    &:last-child{
+                        padding-right: 50px;
+                    }
+                }
+            }
+
+            form{
+                height: 35px;
+                border-bottom: 3px solid $blueComics;
+
+                button,input.form-control{
+                    background-color: #ffffff;
+                    border: none;
+                    padding-bottom: 0;
+                    padding-right: 0;
+                    background-color: inherit;
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                input.form-control{
+                    width: 120px;
+                    padding-right: 2px;
+                    text-align: right;
+                    margin-right: 0;
+
+                    &::placeholder{
+                        font-size: 0.9em;
+                        font-weight: bold;
+                    }
+                }
+                button{
+                    padding-left: 2px;
+
+                    i.fa-search{
+                        font-size: 1em;
+                    }
+
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}

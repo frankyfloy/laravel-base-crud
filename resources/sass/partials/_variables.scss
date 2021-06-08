@@ -1,0 +1,58 @@
+$w_100: 100%;
+
+$fontSize : 14px;
+
+// Padding X Page Content
+$pxContentPage : 17%;
+
+
+// Color
+
+// color this project
+$blueComics :  #0282f9;
+
+$greyFooter : #959595;
+
+
+$white: #ffffff;
+
+$txt-pink: #c70cb9;
+
+$tuna: #353841;
+
+$black: #000000;
+
+$grey: #1e1e1e;
+
+$lightGreyMain: #e8e8e8;
+
+$lightGreyFoot: #ececec;
+
+$fasColor: #009cff;
+
+// icon-color
+.cl-face{
+    color: #3b5998;
+}
+.cl-insta{
+    color: #3f729b;
+}
+.cl-twitter{
+    color: #00acee;
+}
+.cl-youTb{
+    color: #c4302b;
+}
+
+.cl-pintst{
+    color: #c8232c;
+}
+.cl-painter{
+    color: #ff8d00;
+}
+
+// Media query breakpoints
+$layout-breakpoint-small: 1200px;
+
+// Media query breakpoints
+$layout-breakpoint-toggle: 992px;

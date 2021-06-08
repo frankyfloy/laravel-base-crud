@@ -1,0 +1,117 @@
+footer{
+    section#allLink{
+        background-image: url('../img/footer-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include px($pxContentPage);
+
+        div.cont-lists{
+            z-index: 0;
+            float: left;
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            @include my(40px);
+
+            .tb-dcComics-shop{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .link-dcComics, .link-shop, .DC-list, .sites{
+                display: flex;
+                flex-direction: column;
+                padding-right: 35px;
+                font-size: 12px;
+                color: $white;
+
+                h5{
+                    margin-bottom: 20px;
+                }
+
+                ul{
+                    list-style: none;
+                    li{
+                        color: $greyFooter;
+                        a{
+                            text-decoration: none;
+                            color: inherit;
+                            &:hover{
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright{
+                margin-top: 5px;
+                color: $white;
+                font-size: 12px;
+                color: $greyFooter;
+            }
+        }
+
+        .cont-logo-foot{
+            float: left;
+            display: flex;
+
+            background-image: url('../img/dc-logo-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    section#footer-social{
+
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include px($pxContentPage);
+        background-color: #303030;
+
+        button.btn{
+            height: 50px;
+            border-radius: 0;
+            border: 2px solid $blueComics;
+            background-color: inherit;
+            color : $white;
+            @include px(20px);
+            margin-left: 15px;
+
+            &:hover{
+                color: $blueComics;
+            }
+        }
+
+        div.social{
+            display: flex;
+            align-items: center;
+
+            h5{
+                color: $blueComics;
+                font-weight: bold;
+            }
+
+            div.link-social{
+                padding-left: 30px;
+
+                a.fab, a.fas{
+                    text-align: center;
+                    line-height: 30px;
+                    vertical-align: middle;
+                    height: 30px;
+                    width: 30px;
+                    margin-left: 10px;
+                    background-color: $greyFooter;
+                    border-radius: 50%;
+                    color: #303030;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

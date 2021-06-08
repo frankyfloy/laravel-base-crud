@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Comic;
 use Illuminate\Http\Request;
+use Faker\Generator as Faker;
+
+// Classe da importarte per le query grezze
+use DB;
 
 class ComicController extends Controller
 {
@@ -12,9 +16,30 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Request $request){
+
+        $sql ='select * from comics WHERE 1=1';
+        $where = [];
+
+        if ($request->has('id')) {
+            $where['id'] = $request->get('id');
+            $sql .= " AND ID=:id" ;
+        }
+
+        if ($request->has('series')) {
+            $where['series'] = $request->get('series');
+            $sql .=" AND series = :series";
+        }
+
+        // return Comic::all();
+        //die and dump = termina l'esecuzione della query
+        // dd($sql);
+
+
+        $comics = DB::select($sql,array_values($where));
+
+        // compact('comics')); temp cancella se non serve
+        return view('comics.home', ['comics' => $comics]);
     }
 
     /**
@@ -24,7 +49,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.createComic');
     }
 
     /**
@@ -35,7 +60,20 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $comic = new Comic();
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = 'https://source.unsplash.com/random/200x200?sig=1';
+        $comic->price = $data["price"];
+        $comic->series = $data["series"];
+        $comic->sale_date = $data["sale_date"];
+        $comic->type = $data["type"];
+        $comic->save();
+
+
+        $data = Comic::orderBy('id', 'desc')->first();
+        return redirect()->route('comics.show', $data);
     }
 
     /**
@@ -46,7 +84,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        return view('comics.details', compact('comic'));
     }
 
     /**
