@@ -31,14 +31,7 @@ class ComicController extends Controller
             $sql .=" AND series = :series";
         }
 
-        // return Comic::all();
-        //die and dump = termina l'esecuzione della query
-        // dd($sql);
-
-
         $comics = DB::select($sql,array_values($where));
-
-        // compact('comics')); temp cancella se non serve
         return view('comics.home', ['comics' => $comics]);
     }
 
@@ -95,7 +88,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.editComic', compact('comic'));
     }
 
     /**
@@ -107,7 +100,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $upComic = $request->all();
+        $comic->update($upComic);
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -118,6 +114,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }

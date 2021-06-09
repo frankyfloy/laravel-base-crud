@@ -47,14 +47,15 @@
         </section>
 
         <section id="infoDetails">
-
             <div class="col-6">
-                <h4>Talent</h4>
-                <div class="br-bottom">
+                <div class="actionOnComic">
+                    <a class="btn-editComic" href="{{route('comics.edit',$comic->id)}}">Edit</a>
 
-                </div>
-                <div class="br-bottom">
-
+                    <form action="{{route('comics.destroy',$comic->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn-deleteComic" type="submit" name="Delete">Delete</button>
+                    </form>
                 </div>
             </div>
 

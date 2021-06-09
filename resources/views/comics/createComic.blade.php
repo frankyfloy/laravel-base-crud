@@ -7,9 +7,6 @@
         <div class="form-createComic">
             <form action="{{route('comics.store')}}" method="post">
                 @csrf
-                {{-- scriviamo a mano l'input --}}
-                {{-- <input name="_method" type="hidden" value="POST"> --}}
-                {{-- oppure usiamo blade --}}
                 @method('POST')
                 <label for="title">Title</label>
                 <input type="text" name="title" placeholder="Title">
@@ -33,7 +30,7 @@
             </form>
         </div>
 
-        {{-- <section id="infoDetails">
+        {{-- <section id="infoCreate">
 
         </section> --}}
 

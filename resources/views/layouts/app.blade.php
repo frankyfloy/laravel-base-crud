@@ -28,6 +28,9 @@
             @case('comics.create')
                 @yield('create')
                 @break
+            @case('comics.edit')
+                @yield('edit')
+                @break
             @default
                 @yield('comics')
         @endswitch

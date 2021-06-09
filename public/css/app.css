@@ -329,13 +329,46 @@ main#details section#consoleDetails div.cont-pubblicità p {
   font-weight: bold;
 }
 main#details section#infoDetails {
+  display: flex;
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 30px;
   padding-bottom: 100px;
   background-color: #ececec;
   width: 100%;
+}
+main#details section#infoDetails div.actionOnComic {
   display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+main#details section#infoDetails div.actionOnComic a.btn-editComic, main#details section#infoDetails div.actionOnComic button.btn-deleteComic {
+  height: 50px;
+  width: 80px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  word-spacing: 20px;
+  text-decoration: none;
+  box-shadow: 1px 1px 3px 1px #1e1e1e;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  text-shadow: 1px 1px 3px #000000;
+}
+main#details section#infoDetails div.actionOnComic a.btn-editComic:hover, main#details section#infoDetails div.actionOnComic button.btn-deleteComic:hover {
+  transform: scale(1.02);
+  transition: all 0.2s;
+}
+main#details section#infoDetails div.actionOnComic a.btn-editComic {
+  background-color: #55ba59;
+}
+main#details section#infoDetails div.actionOnComic button.btn-deleteComic {
+  color: #ffffff;
+  background-color: #c8232c;
 }
 main#details section#infoDetails h4 {
   margin: 0;
@@ -497,6 +530,96 @@ main#create .form-createComic form input[type=submit] {
   border: 1px solid #353841;
 }
 main#create .form-createComic form input[type=submit]:hover {
+  background-color: #0282f9;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.4s;
+}
+
+main#edit {
+  position: relative;
+  background-color: #f6f6f6;
+}
+main#edit .form-editComic {
+  display: flex;
+  justify-content: center;
+  background-color: #0282f9;
+}
+main#edit .form-editComic form {
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 300px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  border: 1px solid #353841;
+  font-weight: bold;
+}
+main#edit .form-editComic form label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #0282f9;
+  text-align: center;
+}
+main#edit .form-editComic form input {
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 2px solid #0282f9;
+  font-weight: bold;
+  color: #353841;
+}
+main#edit .form-editComic form input::-moz-placeholder {
+  color: #959595;
+  font-weight: bold;
+}
+main#edit .form-editComic form input:-ms-input-placeholder {
+  color: #959595;
+  font-weight: bold;
+}
+main#edit .form-editComic form input::placeholder {
+  color: #959595;
+  font-weight: bold;
+}
+main#edit .form-editComic form input::-moz-placeholder:hover {
+  text-decoration: underline;
+}
+main#edit .form-editComic form input:-ms-input-placeholder:hover {
+  text-decoration: underline;
+}
+main#edit .form-editComic form input::placeholder:hover {
+  text-decoration: underline;
+}
+main#edit .form-editComic form input:hover::-moz-placeholder {
+  text-decoration: underline;
+}
+main#edit .form-editComic form input:hover:-ms-input-placeholder {
+  text-decoration: underline;
+}
+main#edit .form-editComic form input:hover::placeholder {
+  text-decoration: underline;
+}
+main#edit .form-editComic form input:focus::-moz-placeholder {
+  color: white;
+}
+main#edit .form-editComic form input:focus:-ms-input-placeholder {
+  color: white;
+}
+main#edit .form-editComic form input:focus::placeholder {
+  color: white;
+}
+main#edit .form-editComic form input[type=submit] {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  border: 1px solid #353841;
+}
+main#edit .form-editComic form input[type=submit]:hover {
   background-color: #0282f9;
   color: #ffffff;
   outline: none;
