@@ -320,7 +320,7 @@ main#details section#consoleDetails p.description {
 }
 main#details section#consoleDetails div.cont-pubblicità {
   position: absolute;
-  top: 20px;
+  top: 0;
   right: 0;
   text-align: right;
 }
@@ -338,12 +338,17 @@ main#details section#infoDetails {
   width: 100%;
 }
 main#details section#infoDetails div.actionOnComic {
+  position: relative;
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
 }
-main#details section#infoDetails div.actionOnComic a.btn-editComic, main#details section#infoDetails div.actionOnComic button.btn-deleteComic {
+main#details section#infoDetails div.actionOnComic form p.confirmDeleteDialog {
+  font-size: 20px;
+  font-weight: bold;
+}
+main#details section#infoDetails div.actionOnComic a.btn-editComic, main#details section#infoDetails div.actionOnComic button.btn-deleteComic, main#details section#infoDetails div.actionOnComic .btn-reset {
   height: 50px;
   width: 80px;
   margin-left: 5px;
@@ -359,11 +364,11 @@ main#details section#infoDetails div.actionOnComic a.btn-editComic, main#details
   vertical-align: middle;
   text-shadow: 1px 1px 3px #000000;
 }
-main#details section#infoDetails div.actionOnComic a.btn-editComic:hover, main#details section#infoDetails div.actionOnComic button.btn-deleteComic:hover {
+main#details section#infoDetails div.actionOnComic a.btn-editComic:hover, main#details section#infoDetails div.actionOnComic button.btn-deleteComic:hover, main#details section#infoDetails div.actionOnComic .btn-reset:hover {
   transform: scale(1.02);
   transition: all 0.2s;
 }
-main#details section#infoDetails div.actionOnComic a.btn-editComic {
+main#details section#infoDetails div.actionOnComic a.btn-editComic, main#details section#infoDetails div.actionOnComic .btn-reset {
   background-color: #55ba59;
 }
 main#details section#infoDetails div.actionOnComic button.btn-deleteComic {
@@ -738,4 +743,22 @@ footer section#footer-social div.social div.link-social a.fab, footer section#fo
 
 * {
   outline: none;
+}
+
+.alert-danger {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.alert-danger ul {
+  border-radius: 10px;
+  background-color: #c8232c;
+  color: #ececec;
+  padding-left: 8px;
+  padding-right: 8px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000000;
 }

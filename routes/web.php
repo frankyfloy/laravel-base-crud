@@ -15,5 +15,8 @@ use App\Http\Controllers\{
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return redirect()->route('comics.index');
+});
 
 Route::resource('comics', 'ComicController');

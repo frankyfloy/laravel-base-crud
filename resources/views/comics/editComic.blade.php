@@ -4,6 +4,16 @@
 
     <main id="edit">
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="form-editComic">
             <form action="{{route('comics.update', ['comic' => $comic->id])}}" method="post">
                 @csrf

@@ -1,3 +1,20 @@
 *{
     outline: none;
 }
+
+.alert-danger{
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    ul{
+        border-radius: 10px;
+        background-color: #c8232c;
+        color: #ececec;
+        @include px(8px);
+        list-style: none;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #000000;
+    }
+}

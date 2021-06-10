@@ -64,7 +64,7 @@ main#details{
 
         div.cont-pubblicità{
             position: absolute;
-            top: 20px;
+            top: 0;
             right: 0;
             text-align: right;
 
@@ -87,13 +87,20 @@ main#details{
 
 
         div.actionOnComic{
+            position: relative;
             display: flex;
             height: 100%;
             justify-content: center;
             align-items: center;
 
+            form{
+                p.confirmDeleteDialog{
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
 
-            a.btn-editComic,button.btn-deleteComic{
+            a.btn-editComic,button.btn-deleteComic,.btn-reset{
                 height:50px;
                 width: 80px;
                 @include mx(5px);
@@ -115,7 +122,7 @@ main#details{
                 }
             }
 
-            a.btn-editComic{
+            a.btn-editComic,.btn-reset{
                 background-color: #55ba59;
             }
 
@@ -123,6 +130,8 @@ main#details{
                 color: $white;
                 background-color: #c8232c;
             }
+
+
         }
 
         h4{

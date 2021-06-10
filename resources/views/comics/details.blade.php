@@ -49,13 +49,26 @@
         <section id="infoDetails">
             <div class="col-6">
                 <div class="actionOnComic">
-                    <a class="btn-editComic" href="{{route('comics.edit',$comic->id)}}">Edit</a>
 
-                    <form action="{{route('comics.destroy',$comic->id)}}" method="post">
+                    <template v-if='!show'>
+                        <a class="btn-editComic" href="{{route('comics.edit',$comic->id)}}">Edit</a>
+
+                        <button class="btn-deleteComic" @click='hiddenModal'>Delete</button>
+                    </template>
+
+
+                    <form
+                        v-show='show'
+                        action="{{route('comics.destroy',$comic->id)}}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button class="btn-deleteComic" type="submit" name="Delete">Delete</button>
+                        <p class='confirmDeleteDialog'>Sei sicuro di voler eliminare?</p>
+
+                        <button class="btn-deleteComic" type="submit" name="Delete">SI</button>
+
+                        <button class="btn-reset" type="reset" @click='hiddenModal'>NO</button>
                     </form>
+
                 </div>
             </div>
 
@@ -99,6 +112,8 @@
             </div>
 
         </section>
+
+
 
     </main>
 

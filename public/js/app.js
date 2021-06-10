@@ -19380,6 +19380,19 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var app = new Vue({
+  el: '#details',
+  data: {
+    show: false
+  },
+  methods: {
+    hiddenModal: function hiddenModal() {
+      this.show = !this.show;
+      console.log(this.show);
+    }
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

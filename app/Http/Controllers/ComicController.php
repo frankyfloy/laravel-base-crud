@@ -53,7 +53,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|unique:comics|string|max:250',
+            'description' => 'string',
+            "price"  => 'required|between:0,99.99999',
+            "sale_date"  => 'date',
+            "type"  => 'string|max:20'
+        ]);
+
         $data = $request->all();
+
         $comic = new Comic();
         $comic->title = $data['title'];
         $comic->description = $data['description'];
@@ -62,11 +71,13 @@ class ComicController extends Controller
         $comic->series = $data["series"];
         $comic->sale_date = $data["sale_date"];
         $comic->type = $data["type"];
+
+        // come Save prendendo l'array senza passare le proprietà
+        // $comic->create($data);
+
         $comic->save();
-
-
-        $data = Comic::orderBy('id', 'desc')->first();
-        return redirect()->route('comics.show', $data);
+        $comic = Comic::orderBy('id', 'desc')->first();
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -100,6 +111,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+            'title' => 'required|string|max:250',
+            'description' => 'string',
+            "price"  => 'required|between:0,99.99999',
+            "sale_date"  => 'date',
+            "type"  => 'string|max:20'
+        ]);
+
         $upComic = $request->all();
         $comic->update($upComic);
 
